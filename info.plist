@@ -1376,18 +1376,18 @@
 	<key>readme</key>
 	<string>## Gemini Workflow for Alfred
 
-Google Gemini AI를 활용한 Alfred 워크플로우입니다.
+An Alfred workflow powered by Google Gemini AI.
 
-### 기능
-- **tr**: 한국어↔영어 자동 번역
-- **gg**: Gemini AI 채팅 (스트리밍)
-- **ggh**: 채팅 이력 조회 및 이전 대화 재개
-- **Universal Actions**: 텍스트 선택 후 설명, 교정, 요약, 톤 변환 등
+### Features
+- **tr**: Auto-detect translation (Korean↔English)
+- **gg**: AI chat with streaming responses
+- **ggh**: Browse and resume chat history
+- **Universal Actions**: Explain, fix grammar, summarize, change tone, and more
 
-### 설정
-1. Workflow 설정에서 Gemini API Key를 입력하세요
-2. 기본 모델과 안전 필터 수준을 설정하세요
-3. 기능별 전용 모델을 설정할 수 있습니다</string>
+### Setup
+1. Enter your Gemini API Key in workflow settings
+2. Choose your default model and safety filter level
+3. Optionally set feature-specific models</string>
 	<key>uidata</key>
 	<dict>
 		<key>A0000001-0001-0000-0000-000000000000</key>
