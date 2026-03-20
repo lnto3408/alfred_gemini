@@ -1,24 +1,55 @@
 #!/usr/bin/osascript -l JavaScript
 
+ObjC.import("AppKit")
+
 function envVar(varName) {
   var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
   return val ? val.js : ""
 }
 
+function getSelectedText() {
+  // Simulate Cmd+C to capture selection before Alfred took focus
+  // Read from clipboard as fallback
+  try {
+    var pb = $.NSPasteboard.generalPasteboard
+    var text = pb.stringForType($.NSPasteboardTypeString)
+    if (text) return text.js.replace(/^\s+|\s+$/g, "")
+  } catch (e) {}
+  return ""
+}
+
 function run(argv) {
   var query = argv[0] || ""
-  if (!query) return JSON.stringify({ items: [{ title: "Translate", subtitle: "Type text to translate", valid: false }] })
-
   var lang = envVar("translation_default_lang") || "ko"
   var langNames = { ko: "Korean", ja: "Japanese", zh: "Chinese", es: "Spanish", fr: "French", de: "German", pt: "Portuguese", vi: "Vietnamese" }
   var langName = langNames[lang] || "Korean"
 
+  if (query !== "") {
+    return JSON.stringify({
+      items: [{
+        title: query,
+        subtitle: "Press Enter to translate (target: " + langName + ")",
+        arg: query,
+        valid: true
+      }]
+    })
+  }
+
+  // No query typed — check clipboard for selected text
+  var clipText = getSelectedText()
+  if (clipText !== "") {
+    var preview = clipText.length > 60 ? clipText.substring(0, 60) + "..." : clipText
+    return JSON.stringify({
+      items: [{
+        title: preview,
+        subtitle: "Press Enter to translate clipboard text (target: " + langName + ")",
+        arg: clipText,
+        valid: true
+      }]
+    })
+  }
+
   return JSON.stringify({
-    items: [{
-      title: query,
-      subtitle: "Press Enter to translate (target: " + langName + ")",
-      arg: query,
-      valid: true
-    }]
+    items: [{ title: "Translate", subtitle: "Type text or copy text first, then type gt", valid: false }]
   })
 }
