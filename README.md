@@ -4,8 +4,8 @@ An Alfred workflow powered by the Google Gemini API. Provides translation, AI ch
 
 ## Features
 
-### Translation (`tr`)
-- Type `tr {text}` or select text and use Universal Action "Translate"
+### Translation (`gt`)
+- Type `gt {text}` or select text and use Universal Action "Translate"
 - Auto-detects language: Korean input → English, other languages → Korean
 - Configurable target language (Korean, Japanese, Chinese, English, German, French, Spanish, Portuguese, Vietnamese, Thai)
 
@@ -14,7 +14,7 @@ An Alfred workflow powered by the Google Gemini API. Provides translation, AI ch
 - Streaming response (real-time text output)
 - Session persistence for follow-up messages
 
-### Chat History (`ggh`)
+### Chat History (`gh`)
 - Browse previous conversations
 - Select to resume a conversation
 - `⌘ + Enter` to delete a conversation
@@ -65,6 +65,23 @@ Select text and run via Universal Action:
 ## Model Priority
 
 `custom_model` > feature-specific model (`translation_model`, `chat_model`) > `default_model`
+
+## Customizing Keywords
+
+You can change the trigger keywords to your preference:
+
+1. Open **Alfred Preferences** → **Workflows** → **Gemini Workflow**
+2. Double-click on the **Script Filter** node you want to change (the leftmost block in each row)
+3. Edit the **Keyword** field to your preferred trigger
+4. Click **Save**
+
+Default keywords:
+
+| Keyword | Feature |
+|---------|---------|
+| `gt` | Translation |
+| `gg` | AI Chat |
+| `gh` | Chat History |
 
 ## License
 

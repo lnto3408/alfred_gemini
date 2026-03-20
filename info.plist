@@ -398,8 +398,8 @@
 	<string>Gemini Workflow</string>
 	<key>objects</key>
 	<array>
-		<!-- ========== 1. TRANSLATE (tr keyword) ========== -->
-		<!-- tr Script Filter -->
+		<!-- ========== 1. TRANSLATE (gt keyword) ========== -->
+		<!-- gt Script Filter -->
 		<dict>
 			<key>config</key>
 			<dict>
@@ -412,7 +412,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>tr</string>
+				<string>gt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelaymode</key>
@@ -582,8 +582,8 @@
 			<integer>1</integer>
 		</dict>
 
-		<!-- ========== 3. CHAT HISTORY (ggh keyword) ========== -->
-		<!-- ggh Script Filter -->
+		<!-- ========== 3. CHAT HISTORY (gh keyword) ========== -->
+		<!-- gh Script Filter -->
 		<dict>
 			<key>config</key>
 			<dict>
@@ -596,7 +596,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>ggh</string>
+				<string>gh</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelaymode</key>
@@ -1379,9 +1379,9 @@
 An Alfred workflow powered by Google Gemini AI.
 
 ### Features
-- **tr**: Auto-detect translation (Korean↔English)
+- **gt**: Auto-detect translation (Korean↔English)
 - **gg**: AI chat with streaming responses
-- **ggh**: Browse and resume chat history
+- **gh**: Browse and resume chat history
 - **Universal Actions**: Explain, fix grammar, summarize, change tone, and more
 
 ### Setup
