@@ -4,12 +4,22 @@ An Alfred workflow powered by the Google Gemini API. Provides translation, AI ch
 
 > **Note:** This workflow requires [Alfred Powerpack](https://www.alfredapp.com/powerpack/) (paid license). Workflows are a Powerpack-exclusive feature and will not work with the free version of Alfred.
 
+## Download
+
+Two versions available on the [Releases](https://github.com/lnto3408/alfred_gemini/releases) page:
+
+| Version | Dependencies | Description |
+|---------|-------------|-------------|
+| **Gemini-Workflow-Bash.alfredworkflow** (Recommended) | None | Uses macOS built-in JXA + curl |
+| Gemini-Workflow.alfredworkflow | Python 3.9+ | Uses google-genai SDK |
+
 ## Features
 
 ### Translation (`gt`)
 - Type `gt {text}` or select text and use Universal Action "Translate"
+- `gt` with no text auto-reads from clipboard
 - Auto-detects language: Korean input → English, other languages → Korean
-- Configurable target language (Korean, Japanese, Chinese, English, German, French, Spanish, Portuguese, Vietnamese, Thai)
+- Configurable target language (Korean, Japanese, Chinese, Spanish, French, German, Portuguese, Vietnamese)
 
 ### AI Chat (`gg`)
 - `gg {message}` to start a conversation with Gemini
@@ -19,28 +29,26 @@ An Alfred workflow powered by the Google Gemini API. Provides translation, AI ch
 ### Chat History (`gh`)
 - Browse previous conversations
 - Select to resume a conversation
-- `⌘ + Enter` to delete a conversation
 
-### Text Actions (Universal Actions)
-Select text and run via Universal Action:
+### Text Actions (Universal Actions + Hotkeys)
+Select text and run via Universal Action or a custom hotkey:
 
 | Action | Description |
 |--------|-------------|
-| Explain | Explain the selected text |
-| Fix Spelling & Grammar | Correct spelling and grammar |
-| Make Shorter | Condense the text |
-| Make Longer | Expand the text |
-| Tone: Friendly | Rewrite in a friendly tone |
-| Tone: Professional | Rewrite in a professional tone |
-| Add Code Comments | Add comments to code |
-| Find Synonym | Find synonyms |
-| Summarize | Summarize the text |
+| Explain | Explain the selected text with structured breakdown |
+| Fix Spelling & Grammar | Correct errors while preserving tone and style |
+| Make Shorter | Reduce text by 40-60% keeping key information |
+| Make Longer | Expand text by 50-100% with meaningful details |
+| Tone: Friendly | Rewrite in a warm, approachable tone |
+| Tone: Professional | Rewrite in a formal, polished tone |
+| Add Code Comments | Add inline comments and docstrings to code |
+| Find Synonym | Find 3-5 synonyms per word with part of speech |
+| Summarize | TL;DR + bullet point summary |
 
 ## Requirements
 
 - macOS
 - [Alfred 5](https://www.alfredapp.com/) with [Powerpack](https://www.alfredapp.com/powerpack/)
-- Python 3.9+ (pre-installed on macOS)
 - Google Gemini API Key (free)
 
 ## Installation
@@ -54,15 +62,9 @@ Select text and run via Universal Action:
 
 ### Step 2: Download and Install
 
-**Option A: From Releases (Recommended)**
 1. Go to the [Releases](https://github.com/lnto3408/alfred_gemini/releases) page
-2. Download the latest `.alfredworkflow` file
+2. Download **Gemini-Workflow-Bash.alfredworkflow** (recommended)
 3. Double-click the downloaded file — Alfred will open and prompt you to import
-
-**Option B: From Source**
-1. Clone or download this repository
-2. Open Alfred Preferences → Workflows
-3. Drag the entire project folder into the workflow list
 
 ### Step 3: Configure
 
@@ -70,8 +72,6 @@ Select text and run via Universal Action:
 2. Paste your **Gemini API Key** into the API Key field
 3. Adjust other settings if needed (model, language, etc.)
 4. Click **Save**
-
-> On the first run, the workflow will automatically install the required Python package (`google-genai`). This takes a few seconds and only happens once.
 
 ## Usage Guide
 
@@ -81,13 +81,21 @@ Select text and run via Universal Action:
 1. Open Alfred (`⌘ + Space`)
 2. Type `gt hello world` and press `Enter`
 3. The translation result appears in a text view
-4. Press `⌘ + C` to copy the result
+
+**Using clipboard (no typing):**
+1. Copy text you want to translate (`⌘ + C`)
+2. Open Alfred and type `gt` (no text after it)
+3. It shows the clipboard text — press `Enter` to translate
+
+**Using hotkey (fastest):**
+1. Select text anywhere on your Mac
+2. Press your configured translation hotkey
+3. Translation appears instantly
 
 **Using Universal Action:**
 1. Select text anywhere on your Mac
-2. Open Alfred Universal Actions (`⌘ + C` then `⌘ + Space`, or your configured hotkey)
+2. Open Alfred Universal Actions (your configured hotkey)
 3. Choose **Translate (Gemini)**
-4. The translation result appears in a text view
 
 ### AI Chat
 
@@ -95,30 +103,27 @@ Select text and run via Universal Action:
 1. Open Alfred and type `gg your question here`
 2. Press `Enter`
 3. The response streams in real-time in a text view
-4. Type a follow-up message in the input field at the bottom to continue the conversation
+4. Type a follow-up message in the input field at the bottom
 
 **Resume a previous conversation:**
 1. Open Alfred and type `gh`
-2. Browse your conversation history
-3. Select a conversation to continue
-4. Type your follow-up message and press `Enter`
+2. Select a conversation to continue
+3. Type your follow-up message
 
-**Delete a conversation:**
-1. Type `gh` to open chat history
-2. Highlight the conversation you want to delete
-3. Press `⌘ + Enter` to delete
+**Start fresh:**
+1. Type `gh` → select **Start New Chat**
 
 ### Text Actions
 
 1. Select any text in any application
-2. Trigger Alfred Universal Actions (default: select text → press your Universal Action hotkey)
-3. Scroll down to find the Gemini actions (they all end with "(Gemini)")
-4. Select an action (e.g., "Explain (Gemini)", "Summarize (Gemini)")
-5. The result appears in a text view
+2. Trigger via Universal Action or your configured hotkey
+3. The result appears in a text view
 
 > **Tip:** If you don't have a Universal Action hotkey set up, go to Alfred Preferences → Features → Universal Actions to configure one.
 
 ## Configuration
+
+### General Settings
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -130,22 +135,83 @@ Select text and run via Universal Action:
 | `safety_threshold` | `BLOCK_MEDIUM_AND_ABOVE` | Safety filter level |
 | `translation_default_lang` | `ko` | Default target language for translation |
 | `max_history_turns` | `20` | Max conversation turns per session |
-| `session_ttl_days` | `7` | Auto-delete sessions older than this |
 
 ### Model Priority
 
 `custom_model` > feature-specific model (`translation_model`, `chat_model`) > `default_model`
 
-## Customizing Keywords
+## Customizing Prompts
 
-You can change the trigger keywords to your preference:
+Every action's system prompt can be customized in the workflow settings. This lets you change how each action behaves without editing any code.
+
+### How to Edit Prompts
+
+1. Open **Alfred Preferences** → **Workflows** → **Gemini Workflow (Bash)**
+2. Click the **[x]** icon (Configure Workflow) in the top-right corner
+3. Scroll down to the **Prompt** section
+4. Edit any prompt text area to your needs
+5. Click **Save**
+
+### Available Prompts
+
+| Setting | What it controls |
+|---------|-----------------|
+| Translation Prompt | How translation works (language detection rules, formatting) |
+| Chat System Prompt | AI chat personality and response style |
+| Explain Prompt | How text explanations are structured |
+| Fix Grammar Prompt | Grammar correction behavior |
+| Make Shorter Prompt | Text shortening rules and target reduction |
+| Make Longer Prompt | Text expansion style and target increase |
+| Friendly Tone Prompt | Friendly tone rewriting rules |
+| Professional Tone Prompt | Professional tone rewriting rules |
+| Add Comments Prompt | Code commenting style and format |
+| Find Synonym Prompt | Synonym output format and rules |
+| Summarize Prompt | Summary structure and format |
+
+### Prompt Writing Tips
+
+- Be specific about what format you want the output in
+- Use bullet points in your prompt — each point becomes a rule the AI follows
+- Include "Output ONLY the result" if you don't want explanations
+- Add "Respond in the same language as the input" for multilingual support
+- Test with a short text first after changing a prompt
+
+### Example: Custom Explain Prompt
+
+Default:
+```
+You are an expert explainer. When given text, provide a clear and structured explanation.
+- Identify the core concept or topic first.
+- Break down complex ideas into digestible parts.
+...
+```
+
+Custom (e.g., for a 5-year-old):
+```
+You are a friendly teacher explaining things to a young child.
+- Use very simple words and short sentences.
+- Give fun, relatable examples.
+- Avoid jargon completely.
+- Respond in the same language as the input text.
+```
+
+### Example: Custom Translation Prompt
+
+Default behavior translates Korean → English and everything else → Korean. You can change this:
+
+```
+You are a professional translator.
+1. Always translate to Japanese.
+2. Output ONLY the translated text.
+3. Preserve formatting.
+```
+
+## Customizing Keywords
 
 1. Open **Alfred Preferences** → **Workflows** → **Gemini Workflow**
 2. Double-click on the **Script Filter** node you want to change (the leftmost block in each row)
 3. Edit the **Keyword** field to your preferred trigger
 4. Click **Save**
-
-Default keywords:
 
 | Keyword | Feature |
 |---------|---------|
@@ -153,14 +219,28 @@ Default keywords:
 | `gg` | AI Chat |
 | `gh` | Chat History |
 
+## Setting Up Hotkeys
+
+Each text action has a hotkey trigger that you can configure:
+
+1. Open **Alfred Preferences** → **Workflows** → **Gemini Workflow (Bash)**
+2. Find the **Hotkey** nodes (blank blocks on the left side)
+3. Double-click a Hotkey node
+4. Press your desired key combination (e.g., `⌘⇧T` for Translate)
+5. Make sure **Argument** is set to **Selection in macOS**
+6. Click **Save**
+
+After setup: select text anywhere → press hotkey → result appears instantly.
+
 ## Troubleshooting
 
 | Problem | Solution |
 |---------|----------|
-| "Dependency installation failed" | Ensure Python 3 is installed: run `python3 --version` in Terminal |
 | No response from Gemini | Check your API key is correct in workflow settings |
-| First run is slow | Normal — the SDK is being installed. Subsequent runs will be fast |
-| Universal Actions not showing | Make sure you have a Universal Action hotkey configured in Alfred Preferences |
+| "Error: API key not valid" | Regenerate your API key at [Google AI Studio](https://aistudio.google.com/apikey) |
+| Universal Actions not showing | Configure a Universal Action hotkey in Alfred Preferences → Features → Universal Actions |
+| Text View shows raw JSON | Make sure you're using the Bash version (v1.1.0+) |
+| Hotkey not working | Double-click the Hotkey node and verify **Argument** is set to **Selection in macOS** |
 
 ## License
 
