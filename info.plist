@@ -449,13 +449,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Translation</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000001-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -530,13 +546,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Gemini Chat</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000002-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -654,13 +686,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Gemini Chat</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000003-0004-0000-0000-000000000000</string>
 			<key>version</key>
@@ -694,15 +742,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Translate (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000004-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -734,13 +784,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Translation</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000004-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -751,15 +817,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Explain (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000005-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -791,13 +859,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Explain</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000005-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -808,15 +892,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Fix Spelling &amp; Grammar (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000006-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -848,13 +934,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Fix Spelling &amp; Grammar</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000006-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -865,15 +967,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Make Shorter (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000007-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -905,13 +1009,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Make Shorter</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000007-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -922,15 +1042,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Make Longer (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000008-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -962,13 +1084,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Make Longer</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000008-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -979,15 +1117,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Tone: Friendly (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A0000009-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1019,13 +1159,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Tone: Friendly</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A0000009-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1036,15 +1192,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Tone: Professional (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A000000A-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1076,13 +1234,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Tone: Professional</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A000000A-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1093,15 +1267,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Add Code Comments (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A000000B-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1133,13 +1309,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Add Code Comments</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A000000B-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1150,15 +1342,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Find Synonym (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A000000C-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1190,13 +1384,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Find Synonym</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A000000C-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1207,15 +1417,17 @@
 			<dict>
 				<key>acceptsfiles</key>
 				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
 				<key>acceptstext</key>
 				<true/>
 				<key>acceptsurls</key>
 				<false/>
-				<key>title</key>
+				<key>name</key>
 				<string>Summarize (Gemini)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.universalaction</string>
+			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
 			<string>A000000D-0001-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1247,13 +1459,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>textsize</key>
-				<integer>3</integer>
-				<key>title</key>
-				<string>Summarize</string>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string>Querying Gemini API…</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.textview</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
 			<string>A000000D-0003-0000-0000-000000000000</string>
 			<key>version</key>
@@ -1808,6 +2036,8 @@ An Alfred workflow powered by Google Gemini AI.
 			<string>session_ttl_days</string>
 		</dict>
 	</array>
+	<key>variables</key>
+	<dict/>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
