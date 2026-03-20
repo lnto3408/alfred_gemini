@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000001-0003</string>
+				<string>C000-TV02</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,7 +25,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000001-0003</string>
+				<string>C000-TV02</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -86,11 +86,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000004-0001</key>
+		<key>CC001-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000004-0002</string>
+				<string>C000-TV02</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -99,11 +99,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000004-0002</key>
+		<key>CC002-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000004-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -112,11 +112,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000005-0001</key>
+		<key>CC002-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000005-0002</string>
+				<string>CC002-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -125,11 +125,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000005-0002</key>
+		<key>CC003-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000005-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -138,11 +138,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000006-0001</key>
+		<key>CC003-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000006-0002</string>
+				<string>CC003-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -151,11 +151,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000006-0002</key>
+		<key>CC004-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000006-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -164,11 +164,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000007-0001</key>
+		<key>CC004-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000007-0002</string>
+				<string>CC004-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -177,11 +177,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000007-0002</key>
+		<key>CC005-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000007-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -190,11 +190,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000008-0001</key>
+		<key>CC005-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000008-0002</string>
+				<string>CC005-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -203,11 +203,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000008-0002</key>
+		<key>CC006-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000008-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -216,11 +216,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000009-0001</key>
+		<key>CC006-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000009-0002</string>
+				<string>CC006-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -229,11 +229,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000009-0002</key>
+		<key>CC007-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000009-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -242,11 +242,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000A-0001</key>
+		<key>CC007-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000A-0002</string>
+				<string>CC007-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -255,11 +255,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000A-0002</key>
+		<key>CC008-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000A-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -268,11 +268,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000B-0001</key>
+		<key>CC008-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000B-0002</string>
+				<string>CC008-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -281,11 +281,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000B-0002</key>
+		<key>CC009-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000B-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -294,11 +294,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000C-0001</key>
+		<key>CC009-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000C-0002</string>
+				<string>CC009-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -307,11 +307,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000C-0002</key>
+		<key>CC010-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000C-0003</string>
+				<string>C000-TV01</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -320,11 +320,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000D-0001</key>
+		<key>CC010-UA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000D-0002</string>
+				<string>CC010-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -333,11 +333,76 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B000000D-0002</key>
+		<key>CH001-ARG</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B000000D-0003</string>
+				<string>C000-TV01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CH001-HK</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CH001-ARG</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CH002-ARG</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C000-TV01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CH002-HK</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CH002-ARG</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CH003-ARG</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C000-TV01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CH003-HK</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CH003-ARG</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -399,39 +464,6 @@
 			<string>B0000001-0001</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputfile</key>
-				<string>scripts/translate</string>
-				<key>inputtype</key>
-				<integer>1</integer>
-				<key>loadingtext</key>
-				<string>Translating...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000001-0003</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -641,44 +673,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>acceptsfiles</key>
-				<false/>
-				<key>acceptsmulti</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>acceptstext</key>
-				<true/>
-				<key>acceptsurls</key>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>name</key>
-				<string>Translate (Gemini)</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.universalaction</string>
-			<key>uid</key>
-			<string>B0000004-0001</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./scripts/translate "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>focusedappvariablename</key>
 				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>B0000004-0002</string>
+			<string>B0000001-0004</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -693,10 +712,12 @@
 				<integer>0</integer>
 				<key>footertext</key>
 				<string></string>
+				<key>inputfile</key>
+				<string>scripts/text_action</string>
 				<key>inputtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>loadingtext</key>
-				<string>Running Translate (Gemini)...</string>
+				<string>Processing...</string>
 				<key>outputmode</key>
 				<integer>1</integer>
 				<key>scriptinput</key>
@@ -709,7 +730,61 @@
 			<key>type</key>
 			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
-			<string>B0000004-0003</string>
+			<string>C000-TV01</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>behaviour</key>
+				<integer>2</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string></string>
+				<key>inputfile</key>
+				<string>scripts/translate</string>
+				<key>inputtype</key>
+				<integer>1</integer>
+				<key>loadingtext</key>
+				<string>Translating...</string>
+				<key>outputmode</key>
+				<integer>1</integer>
+				<key>scriptinput</key>
+				<integer>2</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>C000-TV02</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Translate (Gemini)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>CC001-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -730,62 +805,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B0000005-0001</string>
+			<string>CC002-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="explain"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>explain</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B0000005-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Explain (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000005-0003</string>
+			<string>CC002-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -806,62 +844,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B0000006-0001</string>
+			<string>CC003-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="fix_grammar"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>fix_grammar</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B0000006-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Fix Spelling &amp; Grammar (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000006-0003</string>
+			<string>CC003-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -882,62 +883,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B0000007-0001</string>
+			<string>CC004-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="make_shorter"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>make_shorter</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B0000007-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Make Shorter (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000007-0003</string>
+			<string>CC004-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -958,62 +922,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B0000008-0001</string>
+			<string>CC005-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="make_longer"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>make_longer</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B0000008-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Make Longer (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000008-0003</string>
+			<string>CC005-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1034,62 +961,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B0000009-0001</string>
+			<string>CC006-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="tone_friendly"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>tone_friendly</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B0000009-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Tone: Friendly (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B0000009-0003</string>
+			<string>CC006-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1110,62 +1000,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B000000A-0001</string>
+			<string>CC007-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="tone_professional"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>tone_professional</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B000000A-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Tone: Professional (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B000000A-0003</string>
+			<string>CC007-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1186,62 +1039,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B000000B-0001</string>
+			<string>CC008-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="add_comments"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>add_comments</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B000000B-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Add Code Comments (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B000000B-0003</string>
+			<string>CC008-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1262,62 +1078,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B000000C-0001</string>
+			<string>CC009-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="find_synonym"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>find_synonym</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B000000C-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Find Synonym (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B000000C-0003</string>
+			<string>CC009-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1338,62 +1117,25 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.universalaction</string>
 			<key>uid</key>
-			<string>B000000D-0001</string>
+			<string>CC010-UA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export action_name="summarize"
-./scripts/text_action "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>summarize</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B000000D-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>behaviour</key>
-				<integer>2</integer>
-				<key>fontmode</key>
-				<integer>0</integer>
-				<key>fontsizing</key>
-				<integer>0</integer>
-				<key>footertext</key>
-				<string></string>
-				<key>inputtype</key>
-				<integer>0</integer>
-				<key>loadingtext</key>
-				<string>Running Summarize (Gemini)...</string>
-				<key>outputmode</key>
-				<integer>1</integer>
-				<key>scriptinput</key>
-				<integer>2</integer>
-				<key>spellchecking</key>
-				<integer>0</integer>
-				<key>stackview</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.userinterface.text</string>
-			<key>uid</key>
-			<string>B000000D-0003</string>
+			<string>CC010-ARG</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1424,9 +1166,125 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>B0000001-0004</string>
+			<string>CH001-HK</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>explain</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>CH001-ARG</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CH002-HK</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>summarize</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>CH002-ARG</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CH003-HK</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>action_name</key>
+					<string>fix_grammar</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>CH003-ARG</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -1449,13 +1307,6 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
-			<key>ypos</key>
-			<integer>50</integer>
-		</dict>
-		<key>B0000001-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
@@ -1508,215 +1359,194 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>ypos</key>
 			<integer>310</integer>
 		</dict>
-		<key>B0000004-0001</key>
+		<key>C000-TV01</key>
+		<dict>
+			<key>xpos</key>
+			<integer>820</integer>
+			<key>ypos</key>
+			<integer>700</integer>
+		</dict>
+		<key>C000-TV02</key>
+		<dict>
+			<key>xpos</key>
+			<integer>820</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+		<key>CC001-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>570</integer>
 		</dict>
-		<key>B0000004-0002</key>
+		<key>CC002-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>670</integer>
 		</dict>
-		<key>B0000004-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>540</integer>
-		</dict>
-		<key>B0000005-0001</key>
+		<key>CC002-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>670</integer>
 		</dict>
-		<key>B0000005-0002</key>
+		<key>CC003-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>770</integer>
 		</dict>
-		<key>B0000005-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>640</integer>
-		</dict>
-		<key>B0000006-0001</key>
+		<key>CC003-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>770</integer>
 		</dict>
-		<key>B0000006-0002</key>
+		<key>CC004-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>870</integer>
 		</dict>
-		<key>B0000006-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>740</integer>
-		</dict>
-		<key>B0000007-0001</key>
+		<key>CC004-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>870</integer>
 		</dict>
-		<key>B0000007-0002</key>
+		<key>CC005-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>840</integer>
+			<integer>970</integer>
 		</dict>
-		<key>B0000007-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>840</integer>
-		</dict>
-		<key>B0000008-0001</key>
+		<key>CC005-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>940</integer>
+			<integer>970</integer>
 		</dict>
-		<key>B0000008-0002</key>
+		<key>CC006-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>940</integer>
+			<integer>1070</integer>
 		</dict>
-		<key>B0000008-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>940</integer>
-		</dict>
-		<key>B0000009-0001</key>
+		<key>CC006-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<integer>1070</integer>
 		</dict>
-		<key>B0000009-0002</key>
+		<key>CC007-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>1040</integer>
+			<integer>1170</integer>
 		</dict>
-		<key>B0000009-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>1040</integer>
-		</dict>
-		<key>B000000A-0001</key>
+		<key>CC007-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1140</integer>
+			<integer>1170</integer>
 		</dict>
-		<key>B000000A-0002</key>
+		<key>CC008-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>1140</integer>
+			<integer>1270</integer>
 		</dict>
-		<key>B000000A-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>1140</integer>
-		</dict>
-		<key>B000000B-0001</key>
+		<key>CC008-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1240</integer>
+			<integer>1270</integer>
 		</dict>
-		<key>B000000B-0002</key>
+		<key>CC009-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>1240</integer>
+			<integer>1370</integer>
 		</dict>
-		<key>B000000B-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>1240</integer>
-		</dict>
-		<key>B000000C-0001</key>
+		<key>CC009-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1340</integer>
+			<integer>1370</integer>
 		</dict>
-		<key>B000000C-0002</key>
+		<key>CC010-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>1340</integer>
+			<integer>1470</integer>
 		</dict>
-		<key>B000000C-0003</key>
-		<dict>
-			<key>xpos</key>
-			<integer>580</integer>
-			<key>ypos</key>
-			<integer>1340</integer>
-		</dict>
-		<key>B000000D-0001</key>
+		<key>CC010-UA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1440</integer>
+			<integer>1470</integer>
 		</dict>
-		<key>B000000D-0002</key>
+		<key>CH001-ARG</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>400</integer>
 			<key>ypos</key>
-			<integer>1440</integer>
+			<integer>1670</integer>
 		</dict>
-		<key>B000000D-0003</key>
+		<key>CH001-HK</key>
 		<dict>
 			<key>xpos</key>
-			<integer>580</integer>
+			<integer>100</integer>
 			<key>ypos</key>
-			<integer>1440</integer>
+			<integer>1670</integer>
+		</dict>
+		<key>CH002-ARG</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>1770</integer>
+		</dict>
+		<key>CH002-HK</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>1770</integer>
+		</dict>
+		<key>CH003-ARG</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>1870</integer>
+		</dict>
+		<key>CH003-HK</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>1870</integer>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
