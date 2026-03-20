@@ -109,7 +109,6 @@ function readStream(streamFile, pidStreamFile) {
     behaviour: { response: "append" }
   })
 
-  // Check for error response
   if (streamString.charAt(0) === "{") {
     try {
       var errorObj = JSON.parse(streamString)
@@ -124,7 +123,6 @@ function readStream(streamFile, pidStreamFile) {
     } catch (e) {}
   }
 
-  // Parse SSE streaming response
   var lines = streamString.split("\n")
   var chunks = []
   for (var i = 0; i < lines.length; i++) {
@@ -150,7 +148,6 @@ function readStream(streamFile, pidStreamFile) {
     } catch (e) {}
   }
 
-  // Not finished yet
   if (finishReason !== "STOP") {
     var stalled = streamString.length > 0 && (new Date().getTime() - fileModified(streamFile) > 30000)
 
@@ -177,7 +174,6 @@ function readStream(streamFile, pidStreamFile) {
     })
   }
 
-  // Finished
   appendChat({ role: "model", parts: [{ text: responseText }] })
   deleteFile(streamFile)
   deleteFile(pidStreamFile)
@@ -204,13 +200,10 @@ function run(argv) {
   ensureDir(dataDir)
   ensureDir(cacheDir)
 
-  // If reading stream, continue loop
   if (streamingNow) return readStream(streamFile, pidStreamFile)
 
-  // Load previous conversation
   var previousChat = readChat()
 
-  // If stream file exists, window was closed mid-stream
   if (fileExists(streamFile)) return JSON.stringify({
     rerun: 0.1,
     variables: { streaming_now: "1", stream_marker: "1" },
@@ -218,13 +211,15 @@ function run(argv) {
     behaviour: { scroll: "end" }
   })
 
-  // If no new query, show previous conversation
-  if (typedQuery === "") return JSON.stringify({
-    response: previousChat.length > 0 ? markdownChat(previousChat) : "Start a new conversation by typing a message.",
-    behaviour: { scroll: "end" }
-  })
+  // No new query — just show history, no API call
+  if (typedQuery === "") {
+    if (previousChat.length === 0) return ""
+    return JSON.stringify({
+      response: markdownChat(previousChat),
+      behaviour: { scroll: "end" }
+    })
+  }
 
-  // New message
   var newMessage = { role: "user", parts: [{ text: typedQuery }] }
   var ongoingChat = previousChat.concat(newMessage)
   var contextChat = ongoingChat.slice(-maxContext)

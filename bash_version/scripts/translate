@@ -56,8 +56,8 @@ function run(argv) {
     var response = JSON.parse(responseStr)
     if (response.error) return JSON.stringify({ response: "Error: " + response.error.message })
     var text = response.candidates[0].content.parts[0].text
-    return JSON.stringify({ response: text.trim() })
+    return text.trim()
   } catch (e) {
-    return JSON.stringify({ response: "Error parsing response: " + responseStr.substring(0, 200) })
+    return "Error parsing response: " + responseStr.substring(0, 200)
   }
 }

@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000001-0002</string>
+				<string>B0000001-0003</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>B0000001-0002</key>
+		<key>B0000001-0004</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -434,8 +434,10 @@
 				<integer>0</integer>
 				<key>footertext</key>
 				<string></string>
+				<key>inputfile</key>
+				<string>scripts/translate</string>
 				<key>inputtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>loadingtext</key>
 				<string>Translating...</string>
 				<key>outputmode</key>
@@ -1418,6 +1420,37 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B0000001-0004</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Gemini Workflow for Alfred (Bash Version)
@@ -1455,6 +1488,13 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<integer>580</integer>
 			<key>ypos</key>
 			<integer>50</integer>
+		</dict>
+		<key>B0000001-0004</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>120</integer>
 		</dict>
 		<key>B0000002-0001</key>
 		<dict>
