@@ -146,11 +146,15 @@ Every action's system prompt can be customized in the workflow settings. This le
 
 ### How to Edit Prompts
 
-1. Open **Alfred Preferences** → **Workflows** → **Gemini Workflow (Bash)**
-2. Click the **[x]** icon (Configure Workflow) in the top-right corner
-3. Scroll down to the **Prompt** section
-4. Edit any prompt text area to your needs
-5. Click **Save**
+1. Open **Alfred Preferences** (click Alfred menu bar icon → Preferences, or press `⌘,`)
+2. Click **Workflows** in the left sidebar
+3. Select **Gemini Workflow (Bash)** from the workflow list
+4. Click the **`[≡]`** icon (Configure Workflow) in the **top-right corner** of the workflow editor — this opens the settings panel
+5. Scroll down past the general settings (API Key, Model, etc.) — the **prompt text areas** are at the bottom
+6. Edit any prompt to your needs
+7. Click **Save**
+
+> **Where exactly?** The prompt settings are in the same place where you entered your API Key. Just scroll down — they are large text areas below the general settings like Model, Safety Filter, and Translation Language.
 
 ### Available Prompts
 
