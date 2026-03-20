@@ -89,7 +89,7 @@ function run(argv) {
   task.arguments = [url, "--silent", "--max-time", "30", "--header", "Content-Type: application/json", "--data", body]
   task.standardOutput = pipe
   task.launchAndReturnError(false)
-  task.waitUntilExit()
+  task.waitUntilExit
 
   var data = pipe.fileHandleForReading.readDataToEndOfFile
   var responseStr = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding).js

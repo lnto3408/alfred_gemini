@@ -12,19 +12,6 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000001-0002</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>B0000001-0002</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
 				<string>B0000001-0003</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -38,7 +25,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B0000001-0002</string>
+				<string>B0000001-0003</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -424,14 +411,16 @@
 				<integer>0</integer>
 				<key>footertext</key>
 				<string></string>
+				<key>inputfile</key>
+				<string>scripts/translate</string>
 				<key>inputtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>loadingtext</key>
-				<string></string>
+				<string>Translating...</string>
 				<key>outputmode</key>
 				<integer>1</integer>
 				<key>scriptinput</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>spellchecking</key>
 				<integer>0</integer>
 				<key>stackview</key>
@@ -1439,29 +1428,6 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>scripts/translate</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B0000001-0002</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Gemini Workflow for Alfred (Bash Version)
@@ -1483,13 +1449,6 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 		<dict>
 			<key>xpos</key>
 			<integer>100</integer>
-			<key>ypos</key>
-			<integer>50</integer>
-		</dict>
-		<key>B0000001-0002</key>
-		<dict>
-			<key>xpos</key>
-			<integer>340</integer>
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
