@@ -2304,6 +2304,195 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>variable</key>
 			<string>max_history_turns</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Explain. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Explain Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_explain</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Fix Grammar. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Fix Grammar Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_fix_grammar</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Make Shorter. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Make Shorter Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_make_shorter</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Make Longer. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Make Longer Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_make_longer</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Friendly Tone. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Friendly Tone Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_tone_friendly</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Professional Tone. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Professional Tone Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_tone_professional</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Add Comments. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Add Comments Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_add_comments</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -&gt; synonym1, synonym2, synonym3</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Find Synonym. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Find Synonym Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_find_synonym</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Custom system prompt for Summarize. Leave default or modify to your needs.</string>
+			<key>label</key>
+			<string>Summarize Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_summarize</string>
+		</dict>
 	</array>
 	<key>variables</key>
 	<dict/>

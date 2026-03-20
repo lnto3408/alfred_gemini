@@ -16,52 +16,31 @@ function safetySettings() {
 }
 
 function getAction(name) {
-  var actions = {
-    explain: {
-      system: "You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.",
-      prompt: "Explain the following text:\n\n"
-    },
-    fix_grammar: {
-      system: "You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.",
-      prompt: ""
-    },
-    make_shorter: {
-      system: "You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.",
-      prompt: ""
-    },
-    make_longer: {
-      system: "You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.",
-      prompt: ""
-    },
-    tone_friendly: {
-      system: "You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.",
-      prompt: ""
-    },
-    tone_professional: {
-      system: "You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.",
-      prompt: ""
-    },
-    add_comments: {
-      system: "You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.",
-      prompt: ""
-    },
-    find_synonym: {
-      system: "You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -> synonym1, synonym2, synonym3",
-      prompt: ""
-    },
-    summarize: {
-      system: "You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text.",
-      prompt: "Summarize the following text:\n\n"
-    }
+  var defaults = {
+    explain: "You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.",
+    fix_grammar: "You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.",
+    make_shorter: "You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.",
+    make_longer: "You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.",
+    tone_friendly: "You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.",
+    tone_professional: "You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.",
+    add_comments: "You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.",
+    find_synonym: "You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -> synonym1, synonym2, synonym3",
+    summarize: "You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text."
   }
-  return actions[name] || null
+
+  if (!defaults[name]) return null
+
+  // User custom prompt overrides default (env var: prompt_explain, prompt_fix_grammar, etc.)
+  var customPrompt = envVar("prompt_" + name)
+  var system = customPrompt || defaults[name]
+
+  return { system: system }
 }
 
 function run(argv) {
   var actionName = envVar("action_name") || argv[0] || ""
   var text = argv[1] || argv[0] || ""
 
-  // If action_name is set via env var, text is the first argument
   if (envVar("action_name") !== "") {
     text = argv[0] || ""
   }
@@ -79,7 +58,7 @@ function run(argv) {
 
   var body = JSON.stringify({
     system_instruction: { parts: [{ text: action.system }] },
-    contents: [{ role: "user", parts: [{ text: action.prompt + text }] }],
+    contents: [{ role: "user", parts: [{ text: text }] }],
     safetySettings: safetySettings()
   })
 
