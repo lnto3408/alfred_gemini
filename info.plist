@@ -422,7 +422,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python3 translate_filter.py "{query}"</string>
+				<string>python3 src/translate_filter.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -452,7 +452,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 translate.py "{query}"</string>
+				<string>python3 src/translate.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -514,7 +514,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python3 chat.py "{query}"</string>
+				<string>python3 src/chat.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -544,7 +544,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 chat_send.py</string>
+				<string>python3 src/chat_send.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -606,7 +606,7 @@
 				<key>runningsubtext</key>
 				<string>Loading history...</string>
 				<key>script</key>
-				<string>python3 chat_history.py "{query}"</string>
+				<string>python3 src/chat_history.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -650,7 +650,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python3 chat_resume.py "{query}"</string>
+				<string>python3 src/chat_resume.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -680,7 +680,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 chat_send.py</string>
+				<string>python3 src/chat_send.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -726,7 +726,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 chat_delete.py</string>
+				<string>python3 src/chat_delete.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -769,7 +769,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python3 translate.py "{query}"</string>
+				<string>python3 src/translate.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -832,7 +832,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py explain</string>
+				<string>echo "{query}" | python3 src/text_action.py explain</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -895,7 +895,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py fix_grammar</string>
+				<string>echo "{query}" | python3 src/text_action.py fix_grammar</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -958,7 +958,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py make_shorter</string>
+				<string>echo "{query}" | python3 src/text_action.py make_shorter</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1021,7 +1021,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py make_longer</string>
+				<string>echo "{query}" | python3 src/text_action.py make_longer</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1084,7 +1084,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py tone_friendly</string>
+				<string>echo "{query}" | python3 src/text_action.py tone_friendly</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1147,7 +1147,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py tone_professional</string>
+				<string>echo "{query}" | python3 src/text_action.py tone_professional</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1210,7 +1210,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py add_comments</string>
+				<string>echo "{query}" | python3 src/text_action.py add_comments</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1273,7 +1273,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py find_synonym</string>
+				<string>echo "{query}" | python3 src/text_action.py find_synonym</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1336,7 +1336,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" | python3 text_action.py summarize</string>
+				<string>echo "{query}" | python3 src/text_action.py summarize</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
