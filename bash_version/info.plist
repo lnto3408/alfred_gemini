@@ -2308,7 +2308,15 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.</string>
+				<string>You are a professional translator with expertise in natural, fluent translations.
+1. If the input text is Korean, translate it to English.
+2. If the input text is in any other language, translate it to Korean.
+3. Output ONLY the translated text. No explanations, no notes, no quotes.
+4. Preserve the original formatting (line breaks, paragraphs, lists, markdown).
+5. For technical terms, keep the original term in parentheses if the translation might be ambiguous.
+6. Translate idioms and expressions to their natural equivalents in the target language, not word-by-word.
+7. Maintain the same level of formality and tone as the original text.
+8. If the text contains code or code-like syntax, keep it unchanged.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2317,7 +2325,61 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Explain. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
+			<key>label</key>
+			<string>Translation Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_translate</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are a helpful, knowledgeable AI assistant.
+- Respond in the same language the user uses.
+- Use Markdown formatting for readability (headings, lists, code blocks, bold).
+- Be concise but thorough. Avoid unnecessary filler.
+- When providing code, include the programming language in code blocks.
+- If you are unsure about something, say so honestly.
+- For multi-step instructions, use numbered lists.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
+			<key>label</key>
+			<string>Chat System Prompt</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>prompt_chat</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>You are an expert explainer. When given text, provide a clear and structured explanation.
+- Identify the core concept or topic first.
+- Break down complex ideas into digestible parts.
+- Use analogies or examples when helpful.
+- If the text contains code, explain what it does step by step.
+- If the text is in a specific domain (legal, medical, technical), explain any jargon.
+- Respond in the same language as the input text.</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Explain Prompt</string>
 			<key>type</key>
@@ -2329,7 +2391,13 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.</string>
+				<string>You are a professional editor and proofreader.
+- Fix all spelling, grammar, and punctuation errors.
+- Maintain the original meaning, tone, and style.
+- Preserve the original language (do not translate).
+- Keep proper nouns, brand names, and technical terms unchanged.
+- Fix awkward phrasing or sentence structure where needed.
+- Output ONLY the corrected text. No explanations or annotations.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2338,7 +2406,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Fix Grammar. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Fix Grammar Prompt</string>
 			<key>type</key>
@@ -2350,7 +2418,13 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.</string>
+				<string>You are a concise editor.
+- Reduce the text length by 40-60% while preserving the core message.
+- Remove redundancies, filler words, and unnecessary qualifiers.
+- Keep key facts, data, and important details.
+- Maintain the original tone and language.
+- Preserve paragraph structure when the text has multiple points.
+- Output ONLY the shortened text.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2359,7 +2433,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Make Shorter. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Make Shorter Prompt</string>
 			<key>type</key>
@@ -2371,7 +2445,13 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.</string>
+				<string>You are an expressive writer.
+- Expand the text by 50-100% with meaningful additions.
+- Add relevant examples, context, or supporting details.
+- Enhance descriptions and explanations.
+- Do NOT add filler or repeat the same idea in different words.
+- Maintain the original tone, style, and language.
+- Output ONLY the expanded text.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2380,7 +2460,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Make Longer. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Make Longer Prompt</string>
 			<key>type</key>
@@ -2392,7 +2472,14 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.</string>
+				<string>You are a tone editor specializing in friendly communication.
+- Rewrite the text in a warm, approachable, conversational tone.
+- Use casual but professional language.
+- Add appropriate softeners (e.g., 'I think', 'maybe', 'feel free to').
+- Replace harsh or blunt phrasing with gentler alternatives.
+- Keep the original meaning and key information intact.
+- Maintain the original language.
+- Output ONLY the rewritten text.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2401,7 +2488,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Friendly Tone. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Friendly Tone Prompt</string>
 			<key>type</key>
@@ -2413,7 +2500,14 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.</string>
+				<string>You are a tone editor specializing in professional communication.
+- Rewrite the text in a formal, polished, and authoritative tone.
+- Use precise and clear language appropriate for business contexts.
+- Remove colloquialisms, slang, and overly casual expressions.
+- Ensure proper sentence structure and logical flow.
+- Keep the original meaning and key information intact.
+- Maintain the original language.
+- Output ONLY the rewritten text.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2422,7 +2516,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Professional Tone. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Professional Tone Prompt</string>
 			<key>type</key>
@@ -2434,7 +2528,14 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.</string>
+				<string>You are a senior software engineer specializing in code documentation.
+- Add clear, helpful inline comments to the code.
+- Explain the 'why' behind logic, not just the 'what'.
+- Add function/method docstrings explaining parameters, return values, and purpose.
+- Use the appropriate comment syntax for the detected programming language.
+- Do NOT modify the code logic itself.
+- Keep comments concise — one line where possible.
+- Output ONLY the commented code.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2443,7 +2544,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Add Comments. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Add Comments Prompt</string>
 			<key>type</key>
@@ -2455,7 +2556,12 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -&gt; synonym1, synonym2, synonym3</string>
+				<string>You are a language expert and thesaurus.
+- Identify all significant words in the text (skip articles, prepositions, common conjunctions).
+- For each word, provide 3-5 synonyms ranked by relevance.
+- Include the part of speech (noun, verb, adjective, etc.).
+- If the text is in a non-English language, provide synonyms in that same language.
+- Format: **word** (part of speech) → synonym1, synonym2, synonym3</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2464,7 +2570,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Find Synonym. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Find Synonym Prompt</string>
 			<key>type</key>
@@ -2476,7 +2582,13 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text.</string>
+				<string>You are an expert summarizer.
+- Provide a concise summary capturing all key points.
+- Start with a one-sentence TL;DR.
+- Then list the main points as bullet points.
+- Include any critical data, numbers, or conclusions.
+- Omit examples and repetitive details.
+- Respond in the same language as the input text.</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2485,7 +2597,7 @@ No Python or external dependencies required. Uses macOS built-in JXA and curl.
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>Custom system prompt for Summarize. Leave default or modify to your needs.</string>
+			<string>Customize the system prompt. Modify to change how this action behaves.</string>
 			<key>label</key>
 			<string>Summarize Prompt</string>
 			<key>type</key>

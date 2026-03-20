@@ -27,12 +27,17 @@ function run(argv) {
   var langNames = { ko: "Korean", ja: "Japanese", zh: "Chinese", es: "Spanish", fr: "French", de: "German", pt: "Portuguese", vi: "Vietnamese" }
   var langName = langNames[lang] || "Korean"
 
-  var systemInstruction = "You are a professional translator. Follow these rules strictly:\n" +
+  var defaultInstruction = "You are a professional translator with expertise in natural, fluent translations.\n" +
     "1. If the input text is Korean, translate it to English.\n" +
     "2. If the input text is in any other language, translate it to " + langName + ".\n" +
     "3. Output ONLY the translated text. No explanations, no notes, no quotes.\n" +
-    "4. Preserve the original formatting (line breaks, paragraphs, lists).\n" +
-    "5. For technical terms, keep the original term in parentheses if the translation might be ambiguous."
+    "4. Preserve the original formatting (line breaks, paragraphs, lists, markdown).\n" +
+    "5. For technical terms, keep the original term in parentheses if the translation might be ambiguous.\n" +
+    "6. Translate idioms and expressions to their natural equivalents in the target language, not word-by-word.\n" +
+    "7. Maintain the same level of formality and tone as the original text.\n" +
+    "8. If the text contains code or code-like syntax, keep it unchanged."
+
+  var systemInstruction = envVar("prompt_translate") || defaultInstruction
 
   var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey
   var body = JSON.stringify({

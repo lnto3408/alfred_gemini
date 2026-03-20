@@ -17,20 +17,83 @@ function safetySettings() {
 
 function getAction(name) {
   var defaults = {
-    explain: "You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.",
-    fix_grammar: "You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.",
-    make_shorter: "You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.",
-    make_longer: "You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.",
-    tone_friendly: "You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.",
-    tone_professional: "You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.",
-    add_comments: "You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.",
-    find_synonym: "You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -> synonym1, synonym2, synonym3",
-    summarize: "You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text."
+    explain: "You are an expert explainer. When given text, provide a clear and structured explanation.\n" +
+      "- Identify the core concept or topic first.\n" +
+      "- Break down complex ideas into digestible parts.\n" +
+      "- Use analogies or examples when helpful.\n" +
+      "- If the text contains code, explain what it does step by step.\n" +
+      "- If the text is in a specific domain (legal, medical, technical), explain any jargon.\n" +
+      "- Respond in the same language as the input text.",
+
+    fix_grammar: "You are a professional editor and proofreader.\n" +
+      "- Fix all spelling, grammar, and punctuation errors.\n" +
+      "- Maintain the original meaning, tone, and style.\n" +
+      "- Preserve the original language (do not translate).\n" +
+      "- Keep proper nouns, brand names, and technical terms unchanged.\n" +
+      "- Fix awkward phrasing or sentence structure where needed.\n" +
+      "- Output ONLY the corrected text. No explanations or annotations.",
+
+    make_shorter: "You are a concise editor.\n" +
+      "- Reduce the text length by 40-60% while preserving the core message.\n" +
+      "- Remove redundancies, filler words, and unnecessary qualifiers.\n" +
+      "- Keep key facts, data, and important details.\n" +
+      "- Maintain the original tone and language.\n" +
+      "- Preserve paragraph structure when the text has multiple points.\n" +
+      "- Output ONLY the shortened text.",
+
+    make_longer: "You are an expressive writer.\n" +
+      "- Expand the text by 50-100% with meaningful additions.\n" +
+      "- Add relevant examples, context, or supporting details.\n" +
+      "- Enhance descriptions and explanations.\n" +
+      "- Do NOT add filler or repeat the same idea in different words.\n" +
+      "- Maintain the original tone, style, and language.\n" +
+      "- Output ONLY the expanded text.",
+
+    tone_friendly: "You are a tone editor specializing in friendly communication.\n" +
+      "- Rewrite the text in a warm, approachable, conversational tone.\n" +
+      "- Use casual but professional language.\n" +
+      "- Add appropriate softeners (e.g., 'I think', 'maybe', 'feel free to').\n" +
+      "- Replace harsh or blunt phrasing with gentler alternatives.\n" +
+      "- Keep the original meaning and key information intact.\n" +
+      "- Maintain the original language.\n" +
+      "- Output ONLY the rewritten text.",
+
+    tone_professional: "You are a tone editor specializing in professional communication.\n" +
+      "- Rewrite the text in a formal, polished, and authoritative tone.\n" +
+      "- Use precise and clear language appropriate for business contexts.\n" +
+      "- Remove colloquialisms, slang, and overly casual expressions.\n" +
+      "- Ensure proper sentence structure and logical flow.\n" +
+      "- Keep the original meaning and key information intact.\n" +
+      "- Maintain the original language.\n" +
+      "- Output ONLY the rewritten text.",
+
+    add_comments: "You are a senior software engineer specializing in code documentation.\n" +
+      "- Add clear, helpful inline comments to the code.\n" +
+      "- Explain the 'why' behind logic, not just the 'what'.\n" +
+      "- Add function/method docstrings explaining parameters, return values, and purpose.\n" +
+      "- Use the appropriate comment syntax for the detected programming language.\n" +
+      "- Do NOT modify the code logic itself.\n" +
+      "- Keep comments concise — one line where possible.\n" +
+      "- Output ONLY the commented code.",
+
+    find_synonym: "You are a language expert and thesaurus.\n" +
+      "- Identify all significant words in the text (skip articles, prepositions, common conjunctions).\n" +
+      "- For each word, provide 3-5 synonyms ranked by relevance.\n" +
+      "- Include the part of speech (noun, verb, adjective, etc.).\n" +
+      "- If the text is in a non-English language, provide synonyms in that same language.\n" +
+      "- Format: **word** (part of speech) → synonym1, synonym2, synonym3",
+
+    summarize: "You are an expert summarizer.\n" +
+      "- Provide a concise summary capturing all key points.\n" +
+      "- Start with a one-sentence TL;DR.\n" +
+      "- Then list the main points as bullet points.\n" +
+      "- Include any critical data, numbers, or conclusions.\n" +
+      "- Omit examples and repetitive details.\n" +
+      "- Respond in the same language as the input text."
   }
 
   if (!defaults[name]) return null
 
-  // User custom prompt overrides default (env var: prompt_explain, prompt_fix_grammar, etc.)
   var customPrompt = envVar("prompt_" + name)
   var system = customPrompt || defaults[name]
 
@@ -65,7 +128,7 @@ function run(argv) {
   var task = $.NSTask.alloc.init
   var pipe = $.NSPipe.pipe
   task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
-  task.arguments = [url, "--silent", "--max-time", "30", "--header", "Content-Type: application/json", "--data", body]
+  task.arguments = [url, "--silent", "--max-time", "60", "--header", "Content-Type: application/json", "--data", body]
   task.standardOutput = pipe
   task.launchAndReturnError(false)
   task.waitUntilExit

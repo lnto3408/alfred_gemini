@@ -78,7 +78,15 @@ function startStream(query, contextChat, streamFile, pidStreamFile) {
   var model = envVar("custom_model") || envVar("chat_model") || envVar("default_model") || "gemini-2.5-flash"
   var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":streamGenerateContent?alt=sse&key=" + apiKey
 
-  var systemInstruction = "You are a helpful AI assistant. Respond in the same language the user uses. Use Markdown formatting for readability."
+  var defaultInstruction = "You are a helpful, knowledgeable AI assistant.\n" +
+    "- Respond in the same language the user uses.\n" +
+    "- Use Markdown formatting for readability (headings, lists, code blocks, bold).\n" +
+    "- Be concise but thorough. Avoid unnecessary filler.\n" +
+    "- When providing code, include the programming language in code blocks.\n" +
+    "- If you are unsure about something, say so honestly.\n" +
+    "- For multi-step instructions, use numbered lists."
+
+  var systemInstruction = envVar("prompt_chat") || defaultInstruction
 
   var contents = contextChat.concat([{ role: "user", parts: [{ text: query }] }])
   var body = JSON.stringify({
