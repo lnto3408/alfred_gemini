@@ -1,0 +1,13 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function run(argv) {
+  var dataDir = envVar("alfred_workflow_data")
+  $.NSFileManager.defaultManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(dataDir, true, undefined, undefined)
+  $("[]").writeToFileAtomicallyEncodingError(dataDir + "/chat.json", true, $.NSUTF8StringEncoding, undefined)
+  return ""
+}

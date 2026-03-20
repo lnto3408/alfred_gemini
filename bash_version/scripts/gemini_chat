@@ -1,0 +1,24 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function run(argv) {
+  var query = argv[0] || ""
+
+  if (query === "" || query === "{query}") return JSON.stringify({
+    items: [{ title: "Chat with Gemini", subtitle: "Type your message...", valid: false }]
+  })
+
+  return JSON.stringify({
+    items: [{
+      title: query,
+      subtitle: "Press Enter to send to Gemini",
+      arg: query,
+      valid: true,
+      variables: { chat_message: query }
+    }]
+  })
+}

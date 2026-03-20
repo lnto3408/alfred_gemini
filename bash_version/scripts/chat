@@ -1,0 +1,240 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function fileExists(path) {
+  return $.NSFileManager.defaultManager.fileExistsAtPath(path)
+}
+
+function fileModified(path) {
+  return $.NSFileManager.defaultManager
+    .attributesOfItemAtPathError(path, undefined)
+    .js["NSFileModificationDate"].js
+    .getTime()
+}
+
+function deleteFile(path) {
+  $.NSFileManager.defaultManager.removeItemAtPathError(path, undefined)
+}
+
+function ensureDir(path) {
+  $.NSFileManager.defaultManager.createDirectoryAtPathWithIntermediateDirectoriesAttributesError(path, true, undefined, undefined)
+}
+
+function writeFile(path, text) {
+  $(text).writeToFileAtomicallyEncodingError(path, true, $.NSUTF8StringEncoding, undefined)
+}
+
+function readFile(path) {
+  if (!fileExists(path)) return null
+  return $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
+}
+
+function readJSON(path) {
+  var str = readFile(path)
+  if (!str) return null
+  try { return JSON.parse(str) } catch (e) { return null }
+}
+
+function chatFilePath() {
+  return envVar("alfred_workflow_data") + "/chat.json"
+}
+
+function readChat() {
+  return readJSON(chatFilePath()) || []
+}
+
+function appendChat(message) {
+  var chat = readChat().concat(message)
+  writeFile(chatFilePath(), JSON.stringify(chat))
+}
+
+function markdownChat(messages) {
+  if (messages.length === 0) return ""
+  var parts = []
+  for (var i = 0; i < messages.length; i++) {
+    var m = messages[i]
+    var prefix = m.role === "user" ? "**You:**" : "**Gemini:**"
+    parts.push(prefix + "\n" + m.parts[0].text)
+  }
+  return parts.join("\n\n---\n\n")
+}
+
+function safetySettings() {
+  var threshold = envVar("safety_threshold") || "BLOCK_MEDIUM_AND_ABOVE"
+  var categories = ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]
+  var result = []
+  for (var i = 0; i < categories.length; i++) {
+    result.push({ category: categories[i], threshold: threshold })
+  }
+  return result
+}
+
+function startStream(query, contextChat, streamFile, pidStreamFile) {
+  var apiKey = envVar("api_key")
+  var model = envVar("custom_model") || envVar("chat_model") || envVar("default_model") || "gemini-2.5-flash"
+  var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":streamGenerateContent?alt=sse&key=" + apiKey
+
+  var systemInstruction = "You are a helpful AI assistant. Respond in the same language the user uses. Use Markdown formatting for readability."
+
+  var contents = contextChat.concat([{ role: "user", parts: [{ text: query }] }])
+  var body = JSON.stringify({
+    system_instruction: { parts: [{ text: systemInstruction }] },
+    contents: contents,
+    safetySettings: safetySettings()
+  })
+
+  $.NSFileManager.defaultManager.createFileAtPathContentsAttributes(streamFile, undefined, undefined)
+
+  var task = $.NSTask.alloc.init
+  var stdout = $.NSPipe.pipe
+  task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
+  task.arguments = [url, "--speed-limit", "0", "--speed-time", "30", "--silent", "--no-buffer", "--header", "Content-Type: application/json", "--data", body, "--output", streamFile]
+  task.standardOutput = stdout
+  task.launchAndReturnError(false)
+  writeFile(pidStreamFile, task.processIdentifier.toString())
+}
+
+function readStream(streamFile, pidStreamFile) {
+  var streamMarker = envVar("stream_marker") === "1"
+  var streamString = readFile(streamFile) || ""
+
+  if (streamMarker) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: "1" },
+    response: "...",
+    behaviour: { response: "append" }
+  })
+
+  // Check for error response
+  if (streamString.charAt(0) === "{") {
+    try {
+      var errorObj = JSON.parse(streamString)
+      if (errorObj.error) {
+        deleteFile(streamFile)
+        deleteFile(pidStreamFile)
+        return JSON.stringify({
+          response: "Error: " + errorObj.error.message,
+          behaviour: { response: "replacelast" }
+        })
+      }
+    } catch (e) {}
+  }
+
+  // Parse SSE streaming response
+  var lines = streamString.split("\n")
+  var chunks = []
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i]
+    if (line.indexOf("data: ") === 0) {
+      try {
+        chunks.push(JSON.parse(line.substring(6)))
+      } catch (e) {}
+    }
+  }
+
+  var responseText = ""
+  for (var j = 0; j < chunks.length; j++) {
+    try {
+      responseText += chunks[j].candidates[0].content.parts[0].text
+    } catch (e) {}
+  }
+
+  var finishReason = null
+  if (chunks.length > 0) {
+    try {
+      finishReason = chunks[chunks.length - 1].candidates[0].finishReason
+    } catch (e) {}
+  }
+
+  // Not finished yet
+  if (finishReason !== "STOP") {
+    var stalled = streamString.length > 0 && (new Date().getTime() - fileModified(streamFile) > 30000)
+
+    if (stalled) {
+      if (responseText.length > 0) appendChat({ role: "model", parts: [{ text: responseText }] })
+      deleteFile(streamFile)
+      deleteFile(pidStreamFile)
+      return JSON.stringify({
+        response: responseText + "\n\n[Connection Stalled]",
+        behaviour: { response: "replacelast", scroll: "end" }
+      })
+    }
+
+    if (streamString.length === 0) return JSON.stringify({
+      rerun: 0.1,
+      variables: { streaming_now: "1" }
+    })
+
+    return JSON.stringify({
+      rerun: 0.1,
+      variables: { streaming_now: "1" },
+      response: responseText,
+      behaviour: { response: "replacelast", scroll: "end" }
+    })
+  }
+
+  // Finished
+  appendChat({ role: "model", parts: [{ text: responseText }] })
+  deleteFile(streamFile)
+  deleteFile(pidStreamFile)
+
+  return JSON.stringify({
+    response: responseText,
+    behaviour: { response: "replacelast", scroll: "end" }
+  })
+}
+
+// Main
+function run(argv) {
+  var typedQuery = argv[0] || ""
+  var apiKey = envVar("api_key")
+  if (apiKey === "") return JSON.stringify({ response: "Error: API key not configured. Set it in workflow settings." })
+
+  var dataDir = envVar("alfred_workflow_data")
+  var cacheDir = envVar("alfred_workflow_cache")
+  var streamFile = cacheDir + "/stream.txt"
+  var pidStreamFile = cacheDir + "/pid.txt"
+  var streamingNow = envVar("streaming_now") === "1"
+  var maxContext = parseInt(envVar("max_history_turns") || "20") * 2
+
+  ensureDir(dataDir)
+  ensureDir(cacheDir)
+
+  // If reading stream, continue loop
+  if (streamingNow) return readStream(streamFile, pidStreamFile)
+
+  // Load previous conversation
+  var previousChat = readChat()
+
+  // If stream file exists, window was closed mid-stream
+  if (fileExists(streamFile)) return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: "1", stream_marker: "1" },
+    response: markdownChat(previousChat),
+    behaviour: { scroll: "end" }
+  })
+
+  // If no new query, show previous conversation
+  if (typedQuery === "") return JSON.stringify({
+    response: previousChat.length > 0 ? markdownChat(previousChat) : "Start a new conversation by typing a message.",
+    behaviour: { scroll: "end" }
+  })
+
+  // New message
+  var newMessage = { role: "user", parts: [{ text: typedQuery }] }
+  var ongoingChat = previousChat.concat(newMessage)
+  var contextChat = ongoingChat.slice(-maxContext)
+
+  startStream(typedQuery, contextChat.slice(0, -1), streamFile, pidStreamFile)
+  appendChat(newMessage)
+
+  return JSON.stringify({
+    rerun: 0.1,
+    variables: { streaming_now: "1", stream_marker: "1" },
+    response: markdownChat(ongoingChat)
+  })
+}

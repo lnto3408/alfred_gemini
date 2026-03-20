@@ -1,0 +1,105 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function safetySettings() {
+  var threshold = envVar("safety_threshold") || "BLOCK_MEDIUM_AND_ABOVE"
+  var categories = ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]
+  var result = []
+  for (var i = 0; i < categories.length; i++) {
+    result.push({ category: categories[i], threshold: threshold })
+  }
+  return result
+}
+
+function getAction(name) {
+  var actions = {
+    explain: {
+      system: "You are a helpful explainer. Explain the given text clearly and concisely. Use the same language as the input text when possible.",
+      prompt: "Explain the following text:\n\n"
+    },
+    fix_grammar: {
+      system: "You are a grammar and spelling expert. Fix all grammar and spelling errors. Output ONLY the corrected text, nothing else.",
+      prompt: ""
+    },
+    make_shorter: {
+      system: "You are a concise writer. Shorten the given text while preserving its core meaning. Output ONLY the shortened text.",
+      prompt: ""
+    },
+    make_longer: {
+      system: "You are an expressive writer. Expand the given text with more detail and nuance. Output ONLY the expanded text.",
+      prompt: ""
+    },
+    tone_friendly: {
+      system: "You are a tone editor. Rewrite the text in a warm, friendly, approachable tone. Output ONLY the rewritten text.",
+      prompt: ""
+    },
+    tone_professional: {
+      system: "You are a tone editor. Rewrite the text in a professional, formal tone. Output ONLY the rewritten text.",
+      prompt: ""
+    },
+    add_comments: {
+      system: "You are a code documentation expert. Add clear, helpful comments to the code. Output ONLY the commented code.",
+      prompt: ""
+    },
+    find_synonym: {
+      system: "You are a thesaurus. For each significant word in the text, provide synonyms. Format: word -> synonym1, synonym2, synonym3",
+      prompt: ""
+    },
+    summarize: {
+      system: "You are a summarizer. Provide a clear, concise summary of the given text. Use the same language as the input text.",
+      prompt: "Summarize the following text:\n\n"
+    }
+  }
+  return actions[name] || null
+}
+
+function run(argv) {
+  var actionName = envVar("action_name") || argv[0] || ""
+  var text = argv[1] || argv[0] || ""
+
+  // If action_name is set via env var, text is the first argument
+  if (envVar("action_name") !== "") {
+    text = argv[0] || ""
+  }
+
+  if (text === "") return JSON.stringify({ response: "No text provided." })
+
+  var apiKey = envVar("api_key")
+  if (apiKey === "") return JSON.stringify({ response: "Error: API key not configured." })
+
+  var action = getAction(actionName)
+  if (!action) return JSON.stringify({ response: "Unknown action: " + actionName })
+
+  var model = envVar("custom_model") || envVar("default_model") || "gemini-2.5-flash"
+  var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey
+
+  var body = JSON.stringify({
+    system_instruction: { parts: [{ text: action.system }] },
+    contents: [{ role: "user", parts: [{ text: action.prompt + text }] }],
+    safetySettings: safetySettings()
+  })
+
+  var task = $.NSTask.alloc.init
+  var pipe = $.NSPipe.pipe
+  task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
+  task.arguments = [url, "--silent", "--max-time", "30", "--header", "Content-Type: application/json", "--data", body]
+  task.standardOutput = pipe
+  task.launchAndReturnError(false)
+  task.waitUntilExit()
+
+  var data = pipe.fileHandleForReading.readDataToEndOfFile
+  var responseStr = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding).js
+
+  try {
+    var response = JSON.parse(responseStr)
+    if (response.error) return JSON.stringify({ response: "Error: " + response.error.message })
+    var result = response.candidates[0].content.parts[0].text
+    return JSON.stringify({ response: result.trim() })
+  } catch (e) {
+    return JSON.stringify({ response: "Error parsing response: " + responseStr.substring(0, 200) })
+  }
+}

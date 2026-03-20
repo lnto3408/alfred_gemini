@@ -1,0 +1,54 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function fileExists(path) {
+  return $.NSFileManager.defaultManager.fileExistsAtPath(path)
+}
+
+function readFile(path) {
+  if (!fileExists(path)) return null
+  return $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, undefined).js
+}
+
+function run(argv) {
+  var dataDir = envVar("alfred_workflow_data")
+  var chatFile = dataDir + "/chat.json"
+
+  var chatStr = readFile(chatFile)
+  if (!chatStr) return JSON.stringify({
+    items: [{ title: "No chat history", subtitle: "Start a new conversation with gg", valid: false }]
+  })
+
+  var chat
+  try { chat = JSON.parse(chatStr) } catch (e) { chat = [] }
+
+  if (chat.length === 0) return JSON.stringify({
+    items: [{ title: "No chat history", subtitle: "Start a new conversation with gg", valid: false }]
+  })
+
+  var turnCount = chat.length
+  var firstMsg = ""
+  try { firstMsg = chat[0].parts[0].text } catch (e) { firstMsg = "Untitled" }
+  var title = firstMsg.length > 60 ? firstMsg.substring(0, 60) + "..." : firstMsg
+
+  return JSON.stringify({
+    items: [
+      {
+        title: title,
+        subtitle: turnCount + " messages — Press Enter to resume",
+        arg: "resume",
+        variables: { resume_chat: "1" }
+      },
+      {
+        title: "Start New Chat",
+        subtitle: "Clear history and start fresh",
+        arg: "new",
+        variables: { new_chat: "1" }
+      }
+    ]
+  })
+}

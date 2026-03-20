@@ -1,0 +1,24 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function run(argv) {
+  var query = argv[0] || ""
+  if (!query) return JSON.stringify({ items: [{ title: "Translate", subtitle: "Type text to translate", valid: false }] })
+
+  var lang = envVar("translation_default_lang") || "ko"
+  var langNames = { ko: "Korean", ja: "Japanese", zh: "Chinese", es: "Spanish", fr: "French", de: "German", pt: "Portuguese", vi: "Vietnamese" }
+  var langName = langNames[lang] || "Korean"
+
+  return JSON.stringify({
+    items: [{
+      title: query,
+      subtitle: "Press Enter to translate (target: " + langName + ")",
+      arg: query,
+      valid: true
+    }]
+  })
+}

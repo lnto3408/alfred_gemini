@@ -1,0 +1,63 @@
+#!/usr/bin/osascript -l JavaScript
+
+function envVar(varName) {
+  var val = $.NSProcessInfo.processInfo.environment.objectForKey(varName)
+  return val ? val.js : ""
+}
+
+function safetySettings() {
+  var threshold = envVar("safety_threshold") || "BLOCK_MEDIUM_AND_ABOVE"
+  var categories = ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]
+  var result = []
+  for (var i = 0; i < categories.length; i++) {
+    result.push({ category: categories[i], threshold: threshold })
+  }
+  return result
+}
+
+function run(argv) {
+  var query = argv[0] || ""
+  if (query === "") return JSON.stringify({ response: "No text provided." })
+
+  var apiKey = envVar("api_key")
+  if (apiKey === "") return JSON.stringify({ response: "Error: API key not configured." })
+
+  var model = envVar("custom_model") || envVar("translation_model") || envVar("default_model") || "gemini-2.5-flash"
+  var lang = envVar("translation_default_lang") || "ko"
+  var langNames = { ko: "Korean", ja: "Japanese", zh: "Chinese", es: "Spanish", fr: "French", de: "German", pt: "Portuguese", vi: "Vietnamese" }
+  var langName = langNames[lang] || "Korean"
+
+  var systemInstruction = "You are a professional translator. Follow these rules strictly:\n" +
+    "1. If the input text is Korean, translate it to English.\n" +
+    "2. If the input text is in any other language, translate it to " + langName + ".\n" +
+    "3. Output ONLY the translated text. No explanations, no notes, no quotes.\n" +
+    "4. Preserve the original formatting (line breaks, paragraphs, lists).\n" +
+    "5. For technical terms, keep the original term in parentheses if the translation might be ambiguous."
+
+  var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey
+  var body = JSON.stringify({
+    system_instruction: { parts: [{ text: systemInstruction }] },
+    contents: [{ role: "user", parts: [{ text: query }] }],
+    safetySettings: safetySettings()
+  })
+
+  var task = $.NSTask.alloc.init
+  var pipe = $.NSPipe.pipe
+  task.executableURL = $.NSURL.fileURLWithPath("/usr/bin/curl")
+  task.arguments = [url, "--silent", "--max-time", "30", "--header", "Content-Type: application/json", "--data", body]
+  task.standardOutput = pipe
+  task.launchAndReturnError(false)
+  task.waitUntilExit()
+
+  var data = pipe.fileHandleForReading.readDataToEndOfFile
+  var responseStr = $.NSString.alloc.initWithDataEncoding(data, $.NSUTF8StringEncoding).js
+
+  try {
+    var response = JSON.parse(responseStr)
+    if (response.error) return JSON.stringify({ response: "Error: " + response.error.message })
+    var text = response.candidates[0].content.parts[0].text
+    return JSON.stringify({ response: text.trim() })
+  } catch (e) {
+    return JSON.stringify({ response: "Error parsing response: " + responseStr.substring(0, 200) })
+  }
+}
