@@ -116,7 +116,7 @@ function run(argv) {
   var action = getAction(actionName)
   if (!action) return JSON.stringify({ response: "Unknown action: " + actionName })
 
-  var model = envVar("custom_model") || envVar("default_model") || "gemini-2.5-flash"
+  var model = envVar("custom_model") || envVar("default_model") || "gemini-4-hydrogen"
   var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey
 
   var body = JSON.stringify({

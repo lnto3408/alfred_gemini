@@ -75,7 +75,7 @@ function safetySettings() {
 
 function startStream(query, contextChat, streamFile, pidStreamFile) {
   var apiKey = envVar("api_key")
-  var model = envVar("custom_model") || envVar("chat_model") || envVar("default_model") || "gemini-2.5-flash"
+  var model = envVar("custom_model") || envVar("chat_model") || envVar("default_model") || "gemini-4-hydrogen"
   var url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":streamGenerateContent?alt=sse&key=" + apiKey
 
   var defaultInstruction = "You are a helpful, knowledgeable AI assistant.\n" +

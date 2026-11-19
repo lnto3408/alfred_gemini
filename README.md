@@ -128,7 +128,7 @@ Select text and run via Universal Action or a custom hotkey:
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `api_key` | (required) | Gemini API Key |
-| `default_model` | `gemini-2.5-flash` | Default model |
+| `default_model` | `gemini-4-hydrogen` | Default model (supports Gemini 4 & `-latest` auto-updating aliases) |
 | `custom_model` | - | Custom model ID (overrides default model) |
 | `translation_model` | - | Model for translation only |
 | `chat_model` | - | Model for chat only |

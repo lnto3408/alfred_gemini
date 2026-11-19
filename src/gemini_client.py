@@ -24,7 +24,7 @@ def resolve_model(feature_model_key=None):
         feat = get_env(feature_model_key)
         if feat:
             return feat
-    return get_env("default_model", "gemini-2.5-flash")
+    return get_env("default_model") or "gemini-4-hydrogen"
 
 
 def get_safety_settings():

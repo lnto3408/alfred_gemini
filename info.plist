@@ -1820,25 +1820,45 @@ An Alfred workflow powered by Google Gemini AI.
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gemini-2.5-flash</string>
+				<string>gemini-4-hydrogen</string>
 				<key>pairs</key>
 				<array>
 					<array>
-						<string>Gemini 2.5 Flash</string>
-						<string>gemini-2.5-flash</string>
+						<string>Gemini 4 Hydrogen</string>
+						<string>gemini-4-hydrogen</string>
 					</array>
 					<array>
-						<string>Gemini 2.5 Pro</string>
-						<string>gemini-2.5-pro</string>
+						<string>Gemini 4 Carbon</string>
+						<string>gemini-4-carbon</string>
 					</array>
 					<array>
-						<string>Gemini 2.0 Flash</string>
-						<string>gemini-2.0-flash</string>
+						<string>Gemini 4 Argon</string>
+						<string>gemini-4-argon</string>
+					</array>
+					<array>
+						<string>Gemini Flash (Latest)</string>
+						<string>gemini-flash-latest</string>
+					</array>
+					<array>
+						<string>Gemini Pro (Latest)</string>
+						<string>gemini-pro-latest</string>
+					</array>
+					<array>
+						<string>Gemini Flash-Lite (Latest)</string>
+						<string>gemini-flash-lite-latest</string>
+					</array>
+					<array>
+						<string>Gemini 3.8 Flash</string>
+						<string>gemini-3.8-flash</string>
+					</array>
+					<array>
+						<string>Gemini 3.5 Flash-Lite</string>
+						<string>gemini-3.5-flash-lite</string>
 					</array>
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Default model for all features</string>
+			<string>Default model for all features (Latest aliases auto-update to newest release)</string>
 			<key>label</key>
 			<string>Default Model</string>
 			<key>type</key>
@@ -1852,7 +1872,7 @@ An Alfred workflow powered by Google Gemini AI.
 				<key>default</key>
 				<string></string>
 				<key>placeholder</key>
-				<string>e.g., gemini-2.5-pro-preview-05-06</string>
+				<string>e.g., gemini-4-carbon</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2039,7 +2059,7 @@ An Alfred workflow powered by Google Gemini AI.
 	<key>variables</key>
 	<dict/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

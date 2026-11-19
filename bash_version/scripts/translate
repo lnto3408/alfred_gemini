@@ -22,7 +22,7 @@ function run(argv) {
   var apiKey = envVar("api_key")
   if (apiKey === "") return JSON.stringify({ response: "Error: API key not configured." })
 
-  var model = envVar("custom_model") || envVar("translation_model") || envVar("default_model") || "gemini-2.5-flash"
+  var model = envVar("custom_model") || envVar("translation_model") || envVar("default_model") || "gemini-4-hydrogen"
   var lang = envVar("translation_default_lang") || "ko"
   var langNames = { ko: "Korean", ja: "Japanese", zh: "Chinese", es: "Spanish", fr: "French", de: "German", pt: "Portuguese", vi: "Vietnamese" }
   var langName = langNames[lang] || "Korean"
